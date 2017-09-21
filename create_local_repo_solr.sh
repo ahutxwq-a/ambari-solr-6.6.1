@@ -50,7 +50,10 @@ dpkg-scanpackages $appName /dev/null | gzip -9c > $rootfolder/Packages.gz
 sudo mkdir -p /var/www/html/$appId/repos/ubuntu14/dists/$appName/Release/binary-amd64 && cd /var/www/html/$appId/repos/ubuntu14/dists/$appName/Release/binary-amd64
 sudo mv $rootfolder/solr.deb $rootfolder/Packages.gz ./
 
+# Add softlinks
 sudo ln -sf /var/www/html/$appId/repos/ubuntu14/dists/$appName/Release /var/www/html/$appId/repos/ubuntu14/dists/$appName/main
+udo ln -sf /var/www/html/HDP-SOLR-2.6-100/repos/ubuntu14/dists/HDP-SOLR/Release/binary-amd64/solr.deb /var/www/html/HDP-SOLR-2.6-100/repos/ubuntu14/HDP-SOLR/solr.deb
+sudo ln -sf /var/www/html/HDP-SOLR-2.6-100/repos/ubuntu14/dists/HDP-SOLR/Release/binary-amd64/Packages.gz /var/www/html/HDP-SOLR-2.6-100/repos/ubuntu14/HDP-SOLR/Packages.gz
 
 # Commented. These will be written by Ambari.
 # Write repo information
