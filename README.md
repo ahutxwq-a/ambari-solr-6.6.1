@@ -17,7 +17,11 @@ git clone https://github.com/cheburakshu/ambari-solr-6.6.1.git
 
 cd ambari-solr-6.6.1
 
+sudo ambari-server install-mpack --mpack=/tmp/ambari-solr-6.6.1/solr-service-mpack-6.6.1.tar.gz
+
 ./create_local_repo_solr.sh
+
+Navigate through Ambari UI and "Add Service" for Solr 6
 
 ```
 
